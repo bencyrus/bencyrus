@@ -112,3 +112,21 @@ header h1 {
   background-position: center;
   border-radius: 5px;
 }
+
+#project-page #content ul {
+  list-style: none;
+  padding: 0px;
+  margin: 0px;
+}
+
+#project-page #content ul h3 {
+  margin: 0px;
+}
+#project-page #content ul h3,
+#project-page #content ul span {
+  display: inline-block;
+}
+
+#project-page #content ul span {
+  color: rgb(64, 64, 64);
+}
