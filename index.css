@@ -69,3 +69,39 @@ header h1 {
   text-decoration: underline;
   color: black;
 }
+
+/* SWE & Photography */
+#project-list {
+  display: grid;
+  gap: 20px;
+}
+
+.project-card {
+  background-color: #ededed;
+  border-radius: 5px;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.project-card img {
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  border-radius: 5px;
+}
+
+.project-card h3 {
+  margin-top: 10px;
+}
+
+@media screen and (min-width: 768px) {
+  #project-list {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  #project-list {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
