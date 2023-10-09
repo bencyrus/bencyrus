@@ -7,15 +7,29 @@ export default function Navbar() {
   // Helper function to determine active style
   function getLinkStyle(path) {
     if (path === "/" && currentPath !== "/") {
-      return "text-decoration: underline; color: gray;";
+      return "text-decoration: underline; color: #3a3b3c;";
     }
     return currentPath.startsWith(path)
       ? "text-decoration: underline; color: #242526; font-weight: bold;"
-      : "text-decoration: underline; color: gray;";
+      : "text-decoration: underline; color: #3a3b3c;";
   }
 
   navbar.innerHTML = `
-    <ul style='list-style-type: none; display: flex; justify-content: left; gap: 20px;'>
+    <style>
+      #responsiveNavbar {
+        list-style-type: none;
+        display: flex;
+        justify-content: left;
+        gap: 20px;
+      }
+
+      @media (max-width: 756px) {
+        #responsiveNavbar {
+          justify-content: center;
+        }
+      }
+    </style>
+    <ul id="responsiveNavbar">
         <li><a href="/" style='${getLinkStyle("/")}'>Home</a></li>
         <li><a href="/swe/swe.html" style='${getLinkStyle(
           "/swe"
