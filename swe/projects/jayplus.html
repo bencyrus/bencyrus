@@ -1,0 +1,160 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <script type="module" src="/index.js"></script>
+    <link rel="stylesheet" href="/index.css" />
+    <title>Ben Cyrus - JayPlus</title>
+  </head>
+  <body>
+    <div
+      id="project-page"
+      style="width: 100%; max-width: 800px; margin: 0px auto"
+    >
+      <div id="header">
+        <img src="/assets/images/jayplus-banner.jpg" alt="jayplus" />
+        <h2>JayPlus</h2>
+        <p>
+          JayPlus is a business management software for car detailing
+          businesses. The web application allows each business to have their
+          customers book service appointments through their subdomain and manage
+          their business through the admin dashboard. The current version
+          includes booking and booking management functionality.
+        </p>
+      </div>
+      <div id="timeline">
+        <h3>Timeline</h3>
+        <ul>
+          <li>
+            <h3>February 2022</h3>
+            <p>
+              I was working part time at a car detailing shop while studying.
+              The owner was a friend of mine and I learned a lot about the
+              business. I noticed a large number of inefficiencies. We had
+              customers and we didn't have detailers or we had detailers and no
+              customers. Moe (the owner) was using 4 different apps to manage
+              the business and 2 to manage bookings and none of them worked for
+              the scheduling requirements of a detailing business.<br />At the
+              time Damon (My cousin and teammate on proejct) asked me how to
+              learn UX Design and I had given him a roadmap. As his portfolio
+              project, I shared the problem with him and we discussed solutions.
+            </p>
+          </li>
+          <li>
+            <h3>April 2022</h3>
+            <p>
+              Damon finished the initial prototype and I was so impressed that I
+              decided to take the project seriously and build it out.<br />We
+              started by showing Moe the prototype and he really liked it. We
+              knew we had something so we refined the prototype based on further
+              user interviews with Moe and his cutomers.
+            </p>
+          </li>
+          <li>
+            <h3>September 2022</h3>
+            <p>
+              The prototype was finalized and we started building the MVP. I was
+              taking extra courses at school at the time so I hired my brother
+              to build the app. He is great with PHP and I wanted a functioning
+              MVP asap so we used Laravel and LiveWire. I wrote a work breakdown
+              structure and we started building the MVP.<br />
+              We built the booking but got stuck on payment, sms and many small
+              features we had problem doing in LiveWire. Lack of documentation
+              and my unfamilarity with the tools. So we decided to go through a
+              rewrite.
+            </p>
+          </li>
+          <li>
+            <h3>November 2022</h3>
+            <p>
+              My brother and I both wanted to learn Golang and I knew React so I
+              decided to build the frontend in React and my brother would do the
+              backend in Golang. We started the project again with detailed jobs
+              to be done. He was much faster at building the backend than I
+              could build the frontend so he made something but we couldn't test
+              because there wasn't a frontend. I finally built a frontend but a
+              lot of small things didn't work and by this time, my brother was
+              working for a startup and did not have any time to work on the
+              app. So I started learning Golang. Spent a few months building
+              proejcts before starting JayPlus.
+            </p>
+          </li>
+          <li>
+            <h3>May 2023</h3>
+            <p>
+              I was pissed off about this project taking so long so until May, I
+              learned as much as I could about project and product management. I
+              also started working as a test automation engineer in March and
+              learned a lot aout integration and testing in general.<br /><br />Starting
+              wiht exactly what I need to be done in the end, I wrote a
+              specificaiton document. At the time I read too much Robert C.
+              Martin and Martin Fowler so I was obsessed with clean code and
+              architecure. I was debating whether to go the microservices route
+              or a simple monolithic application. I am not one to follow the
+              hype so I realized what I like about microservices is clear
+              separation of concerns and the fact that different teams or
+              individuals can work on completely serparate services. But for my
+              app to work, all the services would need to work at the same time,
+              and even at scale I wouldn't relly need to independently deploy
+              services based on projected eventual traffic. So I decided to take
+              Domain Driven Design from microservices and apply it to my
+              monolithic application and the result was a service ortiented
+              (modular) monolithic application. So with that decision finalized,
+              I started the specification document.<br /><br />
+              The document started with an overview of the application and
+              technology in use and further down outlined every module and even
+              route the backend would need and the frontend pages and
+              components. I think I did it like that because I really wanted it
+              to work this time.
+            </p>
+          </li>
+          <li>
+            <h3>June 2023</h3>
+            <p>
+              Noticing if I really want anyone to be able to jump in and work on
+              the app, I need CICD set up. I had avoided that for 4 years but it
+              was the time. I learned Docker and Different ways of deployment
+              but eentually, decided to just buy a VM from DigitalOcean and set
+              up CI in GitHub Actions. I couldn't believe it. I had made many
+              projects but it was the first time I could just send my domain to
+              someone and they could access my app (I had done that with static
+              websites before but this was something else).
+              <br /><br />
+              This time, I started with the basics of backend. I created my
+              architecture, created my modules and set up routes and handler
+              that were just GET requests to send back dummy data in the format
+              that I would eventually send. Then, it was time for frontedn. I
+              had a base but I had learned more about React so I reimplemented
+              the fronend. Using custom hooks, clean utility functions and
+              initially too many useEffects which I fixed later.
+            </p>
+          </li>
+          <li>
+            <h3>August 2023</h3>
+            <p>
+              With frontend almost finished, I started working on the backend.
+              Bought a managed Postgres database and started implementing my
+              models. Created an ERD, models, handlers and queries. The biggest
+              challenge at this point for me was the architecture I was using.
+              Go does not allowl cyclical dependencies which was new to me so I
+              added interfaces and passed database as dependency to my app.
+              <br />
+              The initial backend to me a few days but then the little things
+              came up. Since I needed to implement subdomains and SSL, I learned
+              to wrok with NginX better. Used Stripe for payment and twilio for
+              SMS. They weren't the most straightforward to implement but it was
+              the booking algorithm which took the most time. I eventually
+              implemented overflow to timeslots and a few specific calculations
+              to make the booking flexible and work with detailing business
+              requirements.
+            </p>
+          </li>
+          <li>
+            <h3>October 2023</h3>
+            <p>We are launching now and fixing tiny bugs.</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>

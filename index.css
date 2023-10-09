@@ -105,3 +105,10 @@ header h1 {
     grid-template-columns: 1fr 1fr 1fr;
   }
 }
+
+#project-page #header img {
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  border-radius: 5px;
+}
