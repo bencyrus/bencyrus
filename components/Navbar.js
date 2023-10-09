@@ -28,6 +28,11 @@ export default function Navbar() {
           justify-content: center;
         }
       }
+
+      #responsiveNavbar li a:hover {
+        font-weight: bold;
+      }
+
     </style>
     <ul id="responsiveNavbar">
         <li><a href="/" style='${getLinkStyle("/")}'>Home</a></li>
