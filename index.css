@@ -127,7 +127,6 @@ header h1 {
   background-size: cover;
   background-position: center;
   border-radius: 5px;
-
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 }
 
@@ -147,4 +146,22 @@ header h1 {
 
 #project-page #content ul span {
   color: rgb(64, 64, 64);
+}
+
+#project-page #content ul .in-content-img {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+@media screen and (min-width: 768px) {
+  #project-page #content ul .in-content-img {
+    flex-direction: row;
+  }
+}
+
+#project-page #content ul .in-content-img img {
+  width: 100%;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
 }
