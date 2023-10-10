@@ -18,9 +18,13 @@ header {
 }
 
 header img {
-  width: 200px;
-  height: 200px;
+  width: 250px;
+  height: 250px;
   border-radius: 50%;
+}
+
+header .intro-text {
+  margin-top: 30px;
 }
 
 header h1 {
@@ -29,7 +33,7 @@ header h1 {
 }
 
 #explore-my-work {
-  margin: 20px 0px;
+  margin: 40px 0px;
   display: flex;
   flex-direction: column;
   gap: 20px;
