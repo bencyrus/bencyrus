@@ -9,6 +9,16 @@
   box-sizing: border-box;
 }
 
+.d-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.gap-30 {
+  gap: 30px;
+}
+
 header {
   display: flex;
   align-items: center;
@@ -78,10 +88,12 @@ header h1 {
   color: gray;
 }
 
-.post-card .show-more-btn {
-  font-weight: bold;
+.post-card .read-more-btn {
   text-decoration: underline;
-  color: black;
+}
+
+.post-card .read-more-btn:hover {
+  font-weight: bold;
 }
 
 /* SWE & Photography */
@@ -142,6 +154,14 @@ header h1 {
   background-position: center;
   border-radius: 5px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+#project-page #tech-stack {
+  margin-bottom: 20px;
+}
+
+#project-page .tech-stack-img img {
+  width: 70px;
+  height: 70px;
 }
 
 #project-page #content ul {
