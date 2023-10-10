@@ -165,3 +165,48 @@ header h1 {
 #project-page #content ul .in-content-img img {
   width: 100%;
 }
+
+/* Photographt Page */
+#photography-category {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+@media screen and (min-width: 768px) {
+  #photography-category {
+    flex-direction: row;
+  }
+}
+
+#photography-category .category-card {
+  box-sizing: border-box;
+  padding: 10px;
+  width: 100%;
+}
+
+#photography-category .category-card a {
+  position: relative;
+  display: block;
+}
+
+#photography-category .category-card img {
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  border-radius: 5px;
+}
+
+#photography-category .category-card .category-text {
+  width: 100%;
+  text-align: center;
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-weight: bold;
+  font-size: 30px;
+}
