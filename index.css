@@ -49,6 +49,7 @@ header h1 {
 .post-card {
   width: 100%;
   background-color: #ededed;
+  border: 1px solid #d0d0d0;
   border-radius: 5px;
   padding: 10px;
   margin-bottom: 10px;
@@ -81,6 +82,7 @@ header h1 {
   flex-direction: column;
   box-sizing: border-box;
   background-color: #ededed;
+  border: 1px solid #d0d0d0;
   border-radius: 5px;
   padding: 10px;
 }
