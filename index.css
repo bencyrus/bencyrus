@@ -8,6 +8,7 @@ header {
   justify-content: center;
   gap: 20px;
   flex-direction: column;
+  margin-top: 50px;
 }
 
 @media screen and (min-width: 768px) {
@@ -31,6 +32,7 @@ header h1 {
   margin: 20px 0px;
   display: flex;
   flex-direction: column;
+  gap: 20px;
   align-items: center;
 }
 
@@ -39,6 +41,11 @@ header h1 {
   display: flex;
   justify-content: center;
   gap: 20px;
+  font-size: 18px;
+}
+
+#explore-my-work .links a:hover {
+  font-weight: bold;
 }
 
 #latest-activity {
@@ -105,7 +112,6 @@ header h1 {
 
 .project-card .read-more-btn {
   text-decoration: underline;
-  color: black;
 }
 
 .project-card .read-more-btn:hover {
