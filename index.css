@@ -162,6 +162,4 @@ header h1 {
 
 #project-page #content ul .in-content-img img {
   width: 100%;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-  border-radius: 5px;
 }
