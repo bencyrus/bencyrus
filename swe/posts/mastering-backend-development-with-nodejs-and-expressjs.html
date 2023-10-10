@@ -1,0 +1,599 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <script type="module" src="/index.js"></script>
+    <link rel="stylesheet" href="/index.css" />
+    <title>Ben Cyrus - Post</title>
+  </head>
+  <body>
+    <div style="width: 100%; max-width: 800px; margin: 0px auto" id="post-page">
+      <div>
+        <h1>Mastering Backend Development With NodeJS and ExpressJS</h1>
+        <div style="font-style: italic; margin-bottom: 10px">
+          Published on Oct 9, 2023 at 10:00 AM
+        </div>
+        <hr />
+        <p>
+          After years of crafting roadmaps and guiding junior developers, I've
+          put together an easy-to-follow backend roadmap. Too much information
+          can be overwhelming, especially for someone new to the field, so this
+          guide is tailored to include just the essentials. The idea is simple:
+          start with the necessary basics and delve into the nitty-gritty
+          details as you progress and when they become relevant.
+          <br /><br />
+          It's worth mentioning that this roadmap isn't for complete beginners
+          to coding. Before embarking on this journey, you should have a basic
+          grasp of JavaScript and, at the very least, know what NodeJS and
+          ExpressJS are—by "know," I simply mean being aware of their existence
+          and basic purpose.
+          <br /><br />
+          Each section of the roadmap breaks topics down based on subject
+          matter, making them easily searchable. As a method of measurement,
+          when you're learning each topic, challenge yourself with this
+          question: "Can I explain this to someone else?" If the answer is yes,
+          then you've truly grasped the concept. This approach ensures you gain
+          a solid understanding before moving on to the next topic, eliminating
+          unnecessary complexities.
+          <br /><br />
+          By the end of this roadmap, you'll be equipped to craft dynamic
+          applications where users can read, write, and delete data with
+          confidence.
+        </p>
+      </div>
+      <div id="content">
+        <h2>Roadmap</h2>
+        <hr />
+        <h3>Goal: Build a fully functioning app</h3>
+        <div class="pre-requisites">
+          <h3>Pre-requisites:</h3>
+          <ul class="li-none">
+            <li>Ability to create simple websites using HTML & CSS.</li>
+            <li>
+              <strong>JavaScript Fundamentals:</strong> A solid understanding
+              of:
+              <ul class="li-disc">
+                <li>Variables</li>
+                <li>Loops</li>
+                <li>Functions</li>
+                <li>DataTypes</li>
+                <li>Conditionals</li>
+                <li>
+                  DOM Manipulation (e.g., creating simple apps or navbars)
+                </li>
+              </ul>
+            </li>
+            <li>
+              <strong>Advanced JavaScript Concepts:</strong> Comfort with:
+              <ul class="li-disc">
+                <li>Asynchronous JavaScript</li>
+                <li>Classes and Objects</li>
+                <li>Modules</li>
+              </ul>
+            </li>
+            <li>
+              <strong>Backend Basics:</strong> Familiarity with NodeJS and
+              ExpressJS, including recognition of terms like:
+              <ul class="li-disc">
+                <li>Routes</li>
+                <li>Middleware</li>
+                <li>Controllers</li>
+                <li>Models</li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+        <article>
+          <h3>Phase 0: Get started with the basics</h3>
+          <ol>
+            <li>
+              If you lack knowledge in any of the prerequisites, make sure to
+              cover them first.
+            </li>
+            <li>
+              For those unfamiliar with NodeJS and Express, watch the
+              recommended course below (Or learn from any resource that covers
+              the topics mentioned in the videos):
+              <ul class="li-disc">
+                <li>
+                  <a href="https://youtu.be/f2EqECiTBL8"
+                    >https://youtu.be/f2EqECiTBL8</a
+                  >
+                  (Note: Post-viewing, you may not be fully equipped to build a
+                  backend independently, but you should understand terms like
+                  routes, handlers, middlewares, etc.)
+                </li>
+              </ul>
+            </li>
+          </ol>
+          <h3>Phase 1: System design basics</h3>
+          <ul class="li-none">
+            <li>
+              <strong>UML (Unified Modeling Language):</strong>
+              <ul class="li-disc">
+                <li>
+                  [Flow Chart] (<a
+                    href="https://youtu.be/vBtGO9pXfrQ?si=aedPVQnCI1OkgMDD"
+                    >https://youtu.be/vBtGO9pXfrQ?si=aedPVQnCI1OkgMDD</a
+                  >)
+                </li>
+                <li>
+                  [Class Diagram] (<a
+                    href="https://youtu.be/6XrL5jXmTwM?si=9_yyKt02OG62fwSQ"
+                    >https://youtu.be/6XrL5jXmTwM?si=9_yyKt02OG62fwSQ</a
+                  >)
+                </li>
+                <li>
+                  [Use Case Diagram] (<a
+                    href="https://youtu.be/4emxjxonNRI?si=ASEjjStgdlEd70sY"
+                    >https://youtu.be/4emxjxonNRI?si=ASEjjStgdlEd70sY</a
+                  >)
+                </li>
+                <li>
+                  [Sequence Diagram] (<a
+                    href="https://youtu.be/pCK6prSq8aw?si=YImYoJFAEIVedOsb"
+                    >https://youtu.be/pCK6prSq8aw?si=YImYoJFAEIVedOsb</a
+                  >)
+                </li>
+                <li>
+                  [Database] (<a
+                    href="https://youtu.be/wR0jg0eQsZA?si=65RxSO-rWyrJsFlL"
+                    >https://youtu.be/wR0jg0eQsZA?si=65RxSO-rWyrJsFlL</a
+                  >)
+                </li>
+                <li>
+                  [Entity Relationship Diagram - Part 1] (<a
+                    href="https://youtu.be/QpdhBUYk7Kk?si=NmSRgPCNyeO6KAGW"
+                    >https://youtu.be/QpdhBUYk7Kk?si=NmSRgPCNyeO6KAGW</a
+                  >)
+                </li>
+                <li>
+                  [Entity Relationship Diagram - Part 2] (<a
+                    href="https://youtu.be/-CuY5ADwn24?si=rx2P9sfafqKBnE0C"
+                    >https://youtu.be/-CuY5ADwn24?si=rx2P9sfafqKBnE0C</a
+                  >)
+                </li>
+                <li>
+                  [Entity Relationship Diagram in Lucidchart (<a
+                    href="https://youtu.be/xIXrnHmZmOA?si=I3pbayaASLs-qWSe"
+                    >https://youtu.be/xIXrnHmZmOA?si=I3pbayaASLs-qWSe</a
+                  >)
+                </li>
+                <li>
+                  [Business Process Model] (<a
+                    href="https://youtu.be/BwkNceoybvA?si=ocmyjdK9wX_5laPI"
+                    >https://youtu.be/BwkNceoybvA?si=ocmyjdK9wX_5laPI</a
+                  >)
+                </li>
+                <li>
+                  [Business Process Model in Lucidchart] (<a
+                    href="https://youtu.be/5Y5TqU8lbRU?si=MbH-jN51nZSzwh16"
+                    >https://youtu.be/5Y5TqU8lbRU?si=MbH-jN51nZSzwh16</a
+                  >)
+                </li>
+              </ul>
+            </li>
+            <li>
+              <strong>Database Design Videos:</strong>
+              <ul class="li-disc">
+                <li>
+                  [From Idea to Database Design] (<a
+                    href="https://youtu.be/5RpUmDEsn1k?si=rkFAYQZa5vz9UDaF"
+                    >https://youtu.be/5RpUmDEsn1k?si=rkFAYQZa5vz9UDaF</a
+                  >)
+                </li>
+                <li>
+                  [Instagram Database Design] (<a
+                    href="https://youtu.be/i_1CbyzzlDk?si=IoaFP-SBL88fqVSJ"
+                    >https://youtu.be/i_1CbyzzlDk?si=IoaFP-SBL88fqVSJ</a
+                  >)
+                </li>
+                <li>
+                  [eCommerce Database Design] (<a
+                    href="https://youtu.be/1HamqOuv2Cw?si=lul28z1PGWpPwLMB"
+                    >https://youtu.be/1HamqOuv2Cw?si=lul28z1PGWpPwLMB</a
+                  >)
+                </li>
+                <li>
+                  [StackOverflow Database Design] (<a
+                    href="https://youtu.be/pAFA2jhTlD0?si=4o8EdOhKTeL3L-LA"
+                    >https://youtu.be/pAFA2jhTlD0?si=4o8EdOhKTeL3L-LA</a
+                  >)
+                </li>
+                <li>
+                  [Trello Database Design] (<a
+                    href="https://youtu.be/7Ck8wSoKJXI?si=_hHl6IhiXyo9JUVL"
+                  >
+                    https://youtu.be/7Ck8wSoKJXI?si=_hHl6IhiXyo9JUVL</a
+                  >)
+                </li>
+                <li>
+                  [Train Booking System Database Design] (
+                  <a href="https://youtu.be/PD6jpvAyRNo?si=Mi1OLdi9ufV6rIf3"
+                    >https://youtu.be/PD6jpvAyRNo?si=Mi1OLdi9ufV6rIf3</a
+                  >)
+                </li>
+                <li>
+                  [School Database Design] (<a
+                    href="https://youtu.be/1YPT6VH256w?si=CrhhGF0AHcDh3pwx"
+                    >https://youtu.be/1YPT6VH256w?si=CrhhGF0AHcDh3pwx</a
+                  >)
+                </li>
+              </ul>
+            </li>
+            <li>
+              <strong>Design What You Want to Build:</strong>
+              <ol>
+                <li>
+                  <strong>Decide what you want to build.</strong>
+                  <ul>
+                    <li>
+                      The app must be simple enough that you can picture it and
+                      imagine how your flow chart and database tables are going
+                      to be.
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <strong>Draw a flow chart.</strong>
+                  <ul>
+                    <li>
+                      The flow chart should include all the pages of your app
+                      and how they are connected.
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <strong>Design data models.</strong>
+                  <ul>
+                    <li>
+                      Design the App's database tables and ERDs (Entity
+                      Relationship Diagrams).
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <strong
+                    >[Optional] Create a Sequence Diagram for your app.</strong
+                  >
+                  <ul>
+                    <li>This is optional, but it is worth doing.</li>
+                  </ul>
+                </li>
+                <li>
+                  <strong>Design the UI (User Interface).</strong>
+                  <ul>
+                    <li>
+                      Design the UI of your app using Figma or any other
+                      software or even pen and paper.
+                    </li>
+                    <li>
+                      Your design must include all the pages of your app with
+                      full details based on your flow chart and diagrams.
+                    </li>
+                  </ul>
+                </li>
+              </ol>
+            </li>
+          </ul>
+          <h3>Phase 2: Deep Dive into Advanced JavaScript</h3>
+          <ul class="li-none">
+            <strong>Step 1: Revisit JavaScript Fundamentals</strong>
+            <li>
+              <strong>DataTypes:</strong> Dive deep into data structures.
+              <ul class="li-disc">
+                <li>
+                  <a
+                    href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures"
+                    >MDN DataTypes</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li>
+              <strong>Objects:</strong> Get a grasp on the core of JS.
+              <ul class="li-disc">
+                <li>
+                  <a
+                    href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_objects"
+                    >MDN Working with Objects</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li>
+              <strong>Classes:</strong> Learn how to create classes and
+              instantiate objects.
+              <ul class="li-disc">
+                <li>
+                  <a
+                    href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes"
+                    >MDN Classes Overview</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/constructor"
+                    >MDN Constructor</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/extends"
+                    >MDN Extends</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/Private_class_fields"
+                    >MDN Private Class Features</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/Public_class_fields"
+                    >MDN Public Fields</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/static"
+                    >MDN Static Methods and Fields</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/Static_initialization_blocks"
+                    >MDN Static Initialization Blocks</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li>
+              <strong>Functions:</strong> Explore the building blocks of logic
+              in JS.
+              <ul class="li-disc">
+                <li>
+                  <a
+                    href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Functions"
+                    >MDN Functions</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions"
+                    >MDN Arrow Functions</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Default_parameters"
+                    >MDN Default Parameters</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li>
+              <strong>Operators:</strong> Dive deeper into the JS toolbox.
+              <ul class="li-disc">
+                <li>
+                  <a
+                    href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this"
+                    >MDN This Operator</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/typeof"
+                    >MDN Typeof Operator</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax"
+                    >MDN Spread Syntax</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li>
+              <strong>Scope:</strong> Understand lexical environments and their
+              boundaries.
+              <ul class="li-disc">
+                <li>
+                  <a
+                    href="https://developer.mozilla.org/en-US/docs/Glossary/Scope"
+                    >MDN Scope</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li>
+              <strong>Loops:</strong> Learn how to iterate over data.
+              <ul class="li-disc">
+                <li>
+                  <a
+                    href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Loops_and_iteration"
+                    >MDN Loops and Iteration</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li>
+              <strong>Array:</strong> Learn how to work with arrays.
+              <ul class="li-disc">
+                <li>
+                  <a
+                    href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array"
+                    >MDN Array</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li>
+              <strong>Template Literals:</strong> Understand string
+              interpolation in modern JS.
+              <ul class="li-disc">
+                <li>
+                  <a
+                    href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals"
+                    >MDN Template Literals</a
+                  >
+                </li>
+              </ul>
+            </li>
+          </ul>
+          <h3>Phase 2: Dive into Asynchronous JavaScript</h3>
+          <ul class="li-none">
+            <li>
+              <strong>Asynchronous Programming:</strong> Embrace the
+              asynchronous nature of JS.
+              <ul class="li-disc">
+                <li>
+                  <a
+                    href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Asynchronous/Introducing"
+                    >MDN Introduction to Asynchronous Programming</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Asynchronous/Promises"
+                  >
+                    MDN Promises
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Asynchronous/Implementing_a_promise-based_API"
+                  >
+                    MDN Promise Based API
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Asynchronous/Introducing_workers"
+                  >
+                    MDN Web Workers
+                  </a>
+                </li>
+              </ul>
+              <li>
+                <strong>Async Function:</strong> Familiarize yourself with the modern approach to async operations.
+                <ul class="li-disc">
+                  <li>
+                    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function">MDN Async Function</a>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <strong>Closure:</strong> Get a deeper understanding of functions and their environments.
+                <ul class="li-disc">
+                  <li>
+                    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures">MDN Closures</a>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <strong>Timers:</strong> Learn how to schedule tasks.
+                <ul class="li-disc">
+                  <li>
+                    <a href="https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/setTimeout">MDN setTimeout()</a>
+                  </li>
+                  <li>
+                    <a href="https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/setInterval">MDN setInterval()</a>
+                  </li>
+                </ul>
+              </li>
+            </li>
+          </ul>
+          <h3>Phase 3: Learn NodeJS</h3>
+          <ul class="li-none">
+            <li>
+              <strong>NodeJS:</strong> Learn the basics of NodeJS.
+              <ul class="li-disc">
+                <li>
+                  <strong>File System:</strong> Learn how to read and write to files.
+                  <ul class="li-disc">
+                    <li>
+                      <a href="https://nodejs.dev/en/api/v20/fs/">NodeJS File System</a>
+                    </li>
+                    <li>
+                      <a href="https://nodejs.dev/en/learn/reading-files-with-nodejs/">Reading Files with NodeJS</a>
+                    </li>
+                    <li>
+                      <a href="https://nodejs.dev/en/learn/writing-files-with-nodejs/">Writing Files with NodeJS</a>
+                    </li>
+                    <li>
+                      <a href="https://nodejs.dev/en/learn/working-with-folders-in-nodejs/">Working with Folders in NodeJS</a>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <strong>URL:</strong> Learn how to work with URLs.
+                  <ul class="li-disc">
+                    <li>
+                      <a href="https://nodejs.dev/en/api/v20/url/">NodeJS URLs</a>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <strong>Events:</strong> Learn how to work with events.
+                  <ul class="li-disc">
+                    <li>
+                      <a href="https://nodejs.dev/en/api/v20/events/">NodeJS Events</a>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <strong>JSON:</strong> All about JSON.
+                  <ul class="li-none">
+                    <li>
+                      <strong>Learning Goals:</strong> Be able to use .json files to store data instead of database.
+                    </li>
+                    <li>
+                      <strong>Topics to Learn:</strong>
+                      <ul class="li-disc">
+                        <li>
+                          What is JSON
+                        </li>
+                        <li>
+                          Work with JSON objects in JavaScript
+                        </li>
+                        <li>
+                          Read from JSON Files
+                        </li>
+                        <li>
+                          Write to JSON Files
+                        </li>
+                      </ul>
+                    </li>
+                    <li>
+                      <strong>Resources:</strong>
+                      <ul class="li-disc">
+                        <li>
+                          [JSON in 10 minutes] (<a href="https://youtu.be/iiADhChRriM?si=DfSZjKYLpuuRrkLP">https://youtu.be/iiADhChRriM?si=DfSZjKYLpuuRrkLP</a>)
+                        </li>
+                        <li>
+                          [JSON Crash Course - Brad Traversy] (<a href="https://youtu.be/wI1CWzNtE-M?si=HnXgGVO8CjwX1OwJ">https://youtu.be/wI1CWzNtE-M?si=HnXgGVO8CjwX1OwJ</a>)
+                        </li>
+                        <li>
+                          Find more if needed. It is important to understand it well.
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <strong>MDN Server-Side Notes</strong>
+                  <ul class="li-disc">
+                    
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </body>
+</html>

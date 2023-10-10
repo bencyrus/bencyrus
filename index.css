@@ -19,6 +19,14 @@
   gap: 30px;
 }
 
+.li-none {
+  list-style: none;
+}
+
+.li-disc {
+  list-style: disc;
+}
+
 header {
   display: flex;
   align-items: center;
@@ -251,4 +259,9 @@ header h1 {
 
 #photography-category .category-card a:hover .category-text {
   font-size: 35px;
+}
+
+/* Post Page */
+#post-page #content h2 {
+  margin-bottom: 0px;
 }
