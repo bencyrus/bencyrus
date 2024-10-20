@@ -17,7 +17,7 @@ export default function RootLayout({
           <div className="md:hidden">
             <Navbar />
           </div>
-          <div className="bg-green-500 flex-1">{children}</div>
+          <div className="bg-neutral-900/95 flex-1 text-white">{children}</div>
         </div>
       </body>
     </html>
