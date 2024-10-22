@@ -18,8 +18,13 @@ export default function RootLayout({
             <Navbar />
           </div>
           <div className="bg-neutral-900/95 flex-1 text-white">{children}</div>
+          <PageFooter />
         </div>
       </body>
     </html>
   );
+}
+
+function PageFooter() {
+  return <div>Footer</div>;
 }

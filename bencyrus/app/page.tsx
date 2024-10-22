@@ -6,28 +6,7 @@ import { LuMail } from "react-icons/lu";
 export default function HomePage() {
   return (
     <div className="p-[36px]">
-      <h1 className="text-[40px] font-bold">Ben Cyrus</h1>
-      <div className="flex gap-[12px] md:items-center md:flex-row flex-col items-start">
-        <h2 className="text-[40px] font-normal text-violet-400">
-          Software Engineer
-        </h2>
-        <LocationBadge />
-      </div>
-      <div className="text-[16px] text-neutral-400 flex flex-col gap-[12px] mt-[28px]">
-        <p>I'm Ben. I'm a Software Engineer based in Toronto.</p>
-        <p>
-          I have been building software for the past three years and have done a
-          fair bit of full-stack work. Currently building Glovee, a CRM for
-          immigration consultants, with two of my friends.
-        </p>
-        <p>
-          Besides software, I enjoy portrait photography and playing badminton.
-        </p>
-      </div>
-      <div className="mt-[28px] flex gap-[12px]">
-        <MoreAboutMeButton />
-        <GetInTouchButton />
-      </div>
+      <HomePageHeader />
     </div>
   );
 }
@@ -63,4 +42,41 @@ function GetInTouchButton() {
       </div>
     </Link>
   );
+}
+
+function HomePageHeader() {
+  return (
+    <div>
+      <h1 className="text-[40px] font-bold">Ben Cyrus</h1>
+      <div className="flex gap-[12px] md:items-center md:flex-row flex-col items-start">
+        <h2 className="text-[40px] font-normal text-violet-400">
+          Software Engineer
+        </h2>
+        <LocationBadge />
+      </div>
+      <div className="text-[16px] text-neutral-400 flex flex-col gap-[12px] mt-[28px]">
+        <p>I'm Ben. I'm a Software Engineer based in Toronto.</p>
+        <p>
+          I have been building software for the past three years and have done a
+          fair bit of full-stack work. Currently building Glovee, a CRM for
+          immigration consultants, with two of my friends.
+        </p>
+        <p>
+          Besides software, I enjoy portrait photography and playing badminton.
+        </p>
+      </div>
+      <div className="mt-[28px] flex gap-[12px]">
+        <MoreAboutMeButton />
+        <GetInTouchButton />
+      </div>
+    </div>
+  );
+}
+
+function HomePageProjects() {
+  return <div>Projects</div>;
+}
+
+function HomePageBlogPosts() {
+  return <div>Blog Posts</div>;
 }
