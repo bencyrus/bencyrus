@@ -80,7 +80,7 @@ function HomePageProjects() {
   return (
     <div>
       <h3 className="text-[20px] font-medium">Selected Projects</h3>
-      <div className="flex gap-[24px] mt-[20px]">
+      <div className="flex gap-[24px] mt-[20px] flex-col md:flex-row">
         <ProjectCard
           title="Glovee - CRM for Immigration Consultants"
           imageSrc="/assets/image/glovee-project-thumbnail.png"
