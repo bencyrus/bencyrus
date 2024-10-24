@@ -20,7 +20,7 @@ export default function RootLayout({
           </div>
           <div className="flex-1 overflow-y-auto">
             <div>{children}</div>
-            <hr className="border-neutral-700 mx-[20px]" />
+            <hr className="border-neutral-700 mx-[20px] mt-[20px]" />
             <PageFooter />
           </div>
         </div>
