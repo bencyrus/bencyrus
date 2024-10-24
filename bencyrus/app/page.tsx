@@ -6,7 +6,7 @@ import { LuArrowRight, LuMail } from "react-icons/lu";
 
 export default function HomePage() {
   return (
-    <div className="p-[36px] flex flex-col gap-[60px]">
+    <div className="md:p-[36px] flex flex-col gap-[60px] p-[24px]">
       <HomePageHeader />
       <HomePageProjects />
       <HomePageBlogPosts />
