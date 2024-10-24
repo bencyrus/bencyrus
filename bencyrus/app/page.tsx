@@ -68,7 +68,7 @@ function HomePageHeader() {
           Besides software, I enjoy portrait photography and playing badminton.
         </p>
       </div>
-      <div className="mt-[28px] flex gap-[12px]">
+      <div className="mt-[28px] flex gap-[22px] flex-col md:flex-row">
         <MoreAboutMeButton />
         <GetInTouchButton />
       </div>
