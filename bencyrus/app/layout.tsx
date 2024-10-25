@@ -18,7 +18,7 @@ export default function RootLayout({
           <div className="md:hidden">
             <Navbar />
           </div>
-          <div className="flex-1 overflow-y-auto">
+          <div className="flex-1 overflow-y-auto mt-[66px] md:mt-0">
             <div>{children}</div>
             <hr className="border-neutral-700 mx-[20px] mt-[20px]" />
             <PageFooter />
