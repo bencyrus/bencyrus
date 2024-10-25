@@ -121,7 +121,7 @@ function ExperienceCard({
             alt={company}
             width={0}
             height={0}
-            className="w-full h-full object-contain"
+            className="w-full rounded-md"
           />
         </div>
         <div className="w-full">
@@ -197,7 +197,7 @@ function EducationCard({
           alt={school}
           width={0}
           height={0}
-          className="w-full h-full object-contain"
+          className="w-full rounded-md"
         />
       </div>
       <div className="w-full">
