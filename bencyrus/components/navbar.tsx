@@ -17,7 +17,9 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
   function handleClickItem() {
-    setIsOpen(false);
+    setTimeout(() => {
+      setIsOpen(false);
+    }, 150);
   }
 
   return (
