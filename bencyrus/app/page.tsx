@@ -1,8 +1,8 @@
-import Image from "next/image";
 import Link from "next/link";
 import { CiLocationOn } from "react-icons/ci";
 import { GoArrowUpRight } from "react-icons/go";
 import { LuArrowRight, LuMail } from "react-icons/lu";
+import { ProjectCard } from "@/components/project-card";
 
 export default function HomePage() {
   return (
@@ -119,45 +119,6 @@ function HomePageBlogPosts() {
           blogPostUrl="/blog/post-2"
         />
       </div>
-    </div>
-  );
-}
-
-interface ProjectCardProps {
-  imageSrc: string;
-  title: string;
-  startDate: string;
-  endDate: string;
-  projectUrl: string;
-}
-
-function ProjectCard({
-  imageSrc,
-  title,
-  startDate,
-  endDate,
-  projectUrl,
-}: ProjectCardProps) {
-  return (
-    <div className="rounded-xl w-full border border-neutral-700">
-      <Link href={projectUrl}>
-        <div>
-          <Image
-            src={imageSrc}
-            alt=""
-            width={0}
-            height={0}
-            layout="responsive"
-            className="rounded-t-xl"
-          />
-        </div>
-        <div className="p-[12px]">
-          <h4 className="text-[16px] text-neutral-100">{title}</h4>
-          <span className="text-[12px] text-neutral-400">
-            {startDate} - {endDate}
-          </span>
-        </div>
-      </Link>
     </div>
   );
 }
