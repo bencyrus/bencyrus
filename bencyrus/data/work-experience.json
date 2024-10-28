@@ -5,7 +5,7 @@
     "startDate": "Jan 2024",
     "endDate": "Present",
     "descriptionItems": [
-      "Architected a highly configurable test automation framework for our Mental Health product, using JSON toselect validations dynamically",
+      "Architected a highly configurable test automation framework for our Mental Health product, using JSON toselect validations dynamically.",
       "Took ownership of the Practitioner Portal QA, conducted regular analysis, and reduced regression testingtime from 12 to 6 hours by collaboratively rewriting the regression suite to follow a more efficient flow.",
       "Documented our collaborations with development and QA teams, promoting use of consistent test identifiers, configurable test frameworks for multiple languages, and white-label clients."
     ],
