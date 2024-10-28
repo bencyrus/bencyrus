@@ -7,6 +7,7 @@ import blogPosts from "@/data/blog-posts.json";
 import projects from "@/data/projects.json";
 import ProjectCard from "@/components/project-card";
 import BlogPostCard from "@/components/blog-post-card";
+import PageFooter from "@/components/page-footer";
 
 export default function HomePage() {
   return (
@@ -14,6 +15,7 @@ export default function HomePage() {
       <HomePageHeader />
       <HomePageProjects />
       <HomePageBlogPosts />
+      <PageFooter />
     </div>
   );
 }
@@ -93,14 +95,7 @@ function HomePageProjects() {
       <h3 className="text-[20px] font-medium">Selected Projects</h3>
       <div className="flex gap-[24px] mt-[20px] flex-col md:flex-row">
         {featuredProjects.map((project) => (
-          <ProjectCard
-            key={project.title}
-            title={project.title}
-            imageSrc={project.imageSrc}
-            startDate={project.startDate}
-            endDate={project.endDate}
-            projectUrl={project.projectUrl}
-          />
+          <ProjectCard key={project.title} project={project} />
         ))}
       </div>
     </div>
@@ -118,13 +113,7 @@ function HomePageBlogPosts() {
       <div className="flex gap-[32px] mt-[20px] flex-col">
         {featuredBlogPosts.map((post, index) => (
           <>
-            <BlogPostCard
-              key={post.title}
-              title={post.title}
-              description={post.description}
-              date={post.date}
-              blogPostUrl={post.blogPostUrl}
-            />
+            <BlogPostCard key={post.title} blogPost={post} />
             {index !== featuredBlogPosts.length - 1 && (
               <hr className="border-neutral-700 border-dashed w-full" />
             )}

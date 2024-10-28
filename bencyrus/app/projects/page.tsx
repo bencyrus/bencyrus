@@ -1,6 +1,7 @@
+import { ProjectType } from "@/contracts/types";
 import projects from "@/data/projects.json";
-import { Project } from "@/contracts/types";
 import ProjectCard from "@/components/project-card";
+import PageFooter from "@/components/page-footer";
 
 export default function ProjectsPage() {
   const sortedProjects = projects.sort(
@@ -11,6 +12,7 @@ export default function ProjectsPage() {
     <div className="md:p-[36px] flex flex-col gap-[40px] p-[24px]">
       <ProjectsPageHeader />
       <Projects projects={sortedProjects} />
+      <PageFooter />
     </div>
   );
 }
@@ -27,21 +29,14 @@ function ProjectsPageHeader() {
 }
 
 interface ProjectsProps {
-  projects: Project[];
+  projects: ProjectType[];
 }
 
 function Projects({ projects }: ProjectsProps) {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 2xl:grid-cols-3 gap-[36px] md:gap-[24px]">
       {projects.map((project) => (
-        <ProjectCard
-          key={project.title}
-          title={project.title}
-          imageSrc={project.imageSrc}
-          startDate={project.startDate}
-          endDate={project.endDate}
-          projectUrl={project.projectUrl}
-        />
+        <ProjectCard key={project.title} project={project} />
       ))}
     </div>
   );

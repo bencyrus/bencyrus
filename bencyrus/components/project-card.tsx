@@ -1,27 +1,19 @@
 import Image from "next/image";
 import Link from "next/link";
 
+import { ProjectType } from "@/contracts/types";
+
 interface ProjectCardProps {
-  imageSrc: string;
-  title: string;
-  startDate: string;
-  endDate: string;
-  projectUrl: string;
+  project: ProjectType;
 }
 
-export default function ProjectCard({
-  imageSrc,
-  title,
-  startDate,
-  endDate,
-  projectUrl,
-}: ProjectCardProps) {
+export default function ProjectCard({ project }: ProjectCardProps) {
   return (
     <div className="rounded-xl w-full border border-neutral-700">
-      <Link href={projectUrl}>
+      <Link href={project.projectUrl}>
         <div>
           <Image
-            src={imageSrc}
+            src={project.imageSrc}
             alt=""
             width={0}
             height={0}
@@ -30,9 +22,9 @@ export default function ProjectCard({
           />
         </div>
         <div className="p-[12px]">
-          <h4 className="text-[16px] text-neutral-100">{title}</h4>
+          <h4 className="text-[16px] text-neutral-100">{project.title}</h4>
           <span className="text-[12px] text-neutral-400">
-            {startDate} - {endDate}
+            {project.startDate} - {project.endDate}
           </span>
         </div>
       </Link>
