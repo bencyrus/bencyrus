@@ -9,7 +9,7 @@ interface ProjectCardProps {
   projectUrl: string;
 }
 
-export function ProjectCard({
+export default function ProjectCard({
   imageSrc,
   title,
   startDate,

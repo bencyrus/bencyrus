@@ -1,0 +1,30 @@
+[
+  {
+    "title": "Why I left my job to start a business",
+    "description": "I left my job to start a business. So should you. Here's why.",
+    "date": "Oct 2024",
+    "blogPostUrl": "/blog/post-1",
+    "featured": true
+  },
+  {
+    "title": "How I built a business in 3 months",
+    "description": "I built a business in 3 months. Here's how I did it.",
+    "date": "Sept 2024",
+    "blogPostUrl": "/blog/post-2",
+    "featured": true
+  },
+  {
+    "title": "5 Essential Tools for Remote Work Productivity",
+    "description": "Discover the top tools that helped me stay productive while working remotely.",
+    "date": "Aug 2024",
+    "blogPostUrl": "/blog/post-3",
+    "featured": false
+  },
+  {
+    "title": "The Power of Morning Routines for Entrepreneurs",
+    "description": "How establishing a solid morning routine transformed my entrepreneurial journey.",
+    "date": "July 2024",
+    "blogPostUrl": "/blog/post-4",
+    "featured": false
+  }
+]

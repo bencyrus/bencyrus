@@ -1,16 +1,21 @@
-import { ProjectCard } from "@/components/project-card";
-import Link from "next/link";
+import projects from "@/data/projects.json";
+import { Project } from "@/contracts/types";
+import ProjectCard from "@/components/project-card";
 
 export default function ProjectsPage() {
+  const sortedProjects = projects.sort(
+    (a, b) => new Date(b.startDate).getTime() - new Date(a.startDate).getTime()
+  );
+
   return (
-    <div className="md:p-[36px] flex flex-col gap-[60px] p-[24px]">
-      <ProjectsHeader />
-      <Projects />
+    <div className="md:p-[36px] flex flex-col gap-[40px] p-[24px]">
+      <ProjectsPageHeader />
+      <Projects projects={sortedProjects} />
     </div>
   );
 }
 
-function ProjectsHeader() {
+function ProjectsPageHeader() {
   return (
     <div className="flex flex-col gap-[8px]">
       <h1 className="text-[36px] font-bold">Projects</h1>
@@ -21,23 +26,23 @@ function ProjectsHeader() {
   );
 }
 
-function Projects() {
+interface ProjectsProps {
+  projects: Project[];
+}
+
+function Projects({ projects }: ProjectsProps) {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 2xl:grid-cols-3 gap-[36px] md:gap-[24px]">
-      <ProjectCard
-        title="Glovee - CRM for Immigration Consultants"
-        imageSrc="/assets/image/glovee-project-thumbnail.png"
-        startDate="Sep 2023"
-        endDate="Ongoing"
-        projectUrl="/projects/glovee"
-      />
-      <ProjectCard
-        title="JayPlus - Business management platform for car detailing businesses"
-        imageSrc="/assets/image/jayplus-project-thumbnail.png"
-        startDate="Oct 2022"
-        endDate="Feb 2023"
-        projectUrl="/projects/jayplus"
-      />
+      {projects.map((project) => (
+        <ProjectCard
+          key={project.title}
+          title={project.title}
+          imageSrc={project.imageSrc}
+          startDate={project.startDate}
+          endDate={project.endDate}
+          projectUrl={project.projectUrl}
+        />
+      ))}
     </div>
   );
 }
