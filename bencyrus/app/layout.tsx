@@ -1,8 +1,6 @@
 import "./globals.css";
 import Navbar from "../components/navbar";
 import Sidebar from "../components/sidebar";
-import { LuMail, LuPhone } from "react-icons/lu";
-import PageFooter from "@/components/page-footer";
 
 export default function RootLayout({
   children,
