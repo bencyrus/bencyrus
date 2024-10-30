@@ -1,27 +1,128 @@
-import ProjectCard from "@/components/project-card";
- 
-# Welcome to my MDX page!
- 
-This is some **bold** and _italics_ text.
- 
-This is a list in markdown:
- 
-- One
-- Two
-- Three
+## Glovee - A CRM for Immigration Consultants
 
-Test glovee project card Test glovee project card Test glovee project card Test glovee project card Test glovee project card Test glovee project card Test glovee project card Test glovee project card Test glovee project card Test glovee project card Test glovee project card Test glovee project card Test glovee project card
+### Overview
 
-Checkout my React component:
+Glovee is a Customer Relationship Management (CRM) platform specifically designed for immigration consultants. It centralizes client information and documents, enabling consultants to manage and understand their clients more effectively. By simplifying data collection and management, Glovee allows consultants to create personalized immigration applications, significantly improving success rates.
 
-<ProjectCard
-  project={{
-    title: "Glovee",
-    description:
-      "Glovee is a startup that I co-founded in 2018. We built a platform for the glove industry that allowed manufacturers to sell gloves to distributors and retailers.",
-    imageSrc: "/assets/image/glovee-project-thumbnail.png",
-    startDate: "Oct 2018",
-    endDate: "Oct 2020",
-    projectUrl: "https://glovee.com",
-  }}
-/>
+### Problem Statement
+
+Immigration consultants often lack dedicated tools for managing client interactions and data. They rely on inefficient methods like Word documents, emails, and direct messages to collect information. This not only consumes valuable time but also hampers their ability to understand each client's unique circumstances. Clients may feel lost in the process, unclear about the status of their application or the next steps, leading to frequent and unnecessary communication with consultants.
+
+### Solution
+
+Glovee addresses these inefficiencies by providing a robust CRM tailored for immigration consultants. It offers a template builder tool that allows consultants to create detailed, purpose-specific templates featuring categorized questions with customizable behaviors and embedded guides. Clients can independently navigate the application process, fill out forms, upload documents, and track their progress. Once all required information is submitted, clients can finalize their applications, locking them from further edits. This centralized approach simplifies access to client data, enabling consultants to prepare personalized submissions and manage documentation efficiently from one platform.
+
+![Glovee Dashboard](https://framerusercontent.com/images/UEIgyWyB1HQ39nlLKM8YGOoJnw.png)
+
+### Engineering Journey
+
+#### Initial Development and Prototyping
+
+After extensive UX research and six months of product discovery, we began developing the initial prototypes of Glovee using **Next.js** for both the frontend and backend. This approach allowed us to quickly build and iterate on the MVP (Minimum Viable Product). We demoed this version to potential clients, who appreciated the concept but requested changes to better suit their workflows.
+
+#### Refactoring and Technology Stack Evolution
+
+Recognizing the need for a more maintainable architecture with a clear separation of concerns, we decided to separate the frontend and backend. The close entanglement of frontend code and business logic in the initial prototype made it difficult to manage and extend. By thinking about the frontend and business logic completely separately, we made it easier to know where things are, add features, and make changes, reducing repetition.
+
+We chose **Next.js** for the frontend to leverage its powerful features like server-side rendering, which is crucial for our target users who may have lower internet speeds.
+
+For the backend, we transitioned to **Golang** with a **PostgreSQL** database. This combination provided us with a simpler architecture that is easier to keep in mind, with organized flows and a clear separation of contents and interfaces. We adopted a **modular monolith** approach with **Domain-Driven Design (DDD)** principles. This design allows us to keep all services within a single application for simplicity, but structured in a way that any module can be easily extracted into a separate service if needed.
+
+#### Advantages of This Architecture
+
+- **Modularity**: The modular monolith and DDD approach make it easy to manage and scale individual components.
+- **Maintainability**: Changes are simpler to implement, such as swapping out the email provider without affecting other parts of the system.
+
+#### Infrastructure and Deployment
+
+- **Database**: We use a managed PostgreSQL database, which offers affordability and ease of configuration.
+- **Deployment**: The application is deployed using **DigitalOcean App Platform**, which is affordable, handles CI/CD, and eliminates the need for managing virtual machines.
+- **Object Storage**: We utilize **Amazon S3** for object storage, employing presigned URLs for secure and direct file uploads and downloads between the client browser and S3.
+
+#### Performance Optimizations
+
+Considering that many of our potential clients are in regions with lower internet speeds, we perform most of our data queries server-side in Next.js. By providing HTML content generated on our server, we deliver a better user experience with faster load times compared to fetching data on the client's browser.
+
+#### Multi-Tenancy Implementation
+
+Glovee is a multi-tenant application where each organization has its own subdomain (e.g., `consultant1.glovee.com`). We handle this by reading the subdomain in the Next.js middleware and rewriting it into the path. This way, we can capture the subdomain using dynamic routing in Next.js, effectively isolating each tenant's data and experience.
+
+#### Iterations and Improvements
+
+After making the requested changes, we launched Glovee with one immigration consultant and one of their clients. While the platform worked well, we identified areas for improvement:
+
+- **Transactions**: The lack of transaction management led to challenges with nested entities when some inserts or updates failed.
+- **Database Schema Modifications**: We needed to adjust some tables and their relationships to better fit our evolving data models.
+- **Performance Enhancements**: To improve performance, we rewrote several queries using PL/pgSQL functions in PostgreSQL, which are incredibly fast and efficient.
+
+#### Transition to PostgREST
+
+Noticing that our backend was mostly acting as a serializer between the database and the frontend, we sought a more efficient solution. We adopted **PostgREST**, a tool that automatically creates a RESTful API from a PostgreSQL database schema, including tables, functions, and views.
+
+- **Unified Business Logic**: All validation, authentication, and business logic are now handled within PostgreSQL, exposed through PostgREST.
+- **Simplified Deployment**: PostgREST is a lightweight binary that requires minimal configuration, running with the database URI.
+- **Fine-Grained Access Control**: We leverage PostgreSQL's role-based access control to secure our API endpoints.
+- **Rapid Development**: This approach allows for rapid changes and iterations, as we can modify database functions and immediately have the API reflect those changes.
+
+##### Advantages of the Current Architecture
+
+- **Performance**: Using PL/pgSQL functions and server-side rendering improves overall application performance.
+- **Security**: Fine-grained access controls enhance the security of the application.
+- **Developer Efficiency**: Consolidating business logic in PostgreSQL reduces code duplication and streamlines development.
+
+#### External Service Integration
+
+While PostgreSQL and PostgREST handle most of our backend logic, we require a separate backend service for integrations that cannot be managed directly from the database, such as:
+
+- **Email Services**: We utilize external providers like **Resend** for sending emails.
+- **AWS Services**: Interactions with AWS services that are not accessible from within PostgreSQL.
+
+We call these external services from within PostgreSQL functions using RPC calls, maintaining a clean separation of concerns.
+
+#### Advantages of This Approach
+
+- **Simplified Architecture**: Having business logic in one place (PostgreSQL) makes the architecture simpler and easier to maintain.
+- **Enhanced Security**: PostgreSQL's role-based access control provides fine-grained security at the database level.
+- **Improved Performance**: PL/pgSQL functions execute within the database, reducing latency and improving performance.
+- **Rapid Iteration**: Changes to business logic can be made quickly by updating database functions.
+
+### UX Collaboration
+
+Before starting the implementation, we collaborated closely with our UX team to ensure that the user experience was intuitive and aligned with user needs. Our collaboration involved:
+
+- **User Interviews**: Participating in narrative-driven interviews with immigrants and consultants to uncover challenges and adaptive strategies.
+- **Prototypes and Sketches**: Assisting with sketches and prototypes, discussing the feasibility of solutions, and identifying potential improvements.
+- **Feasibility Discussions**: Evaluating proposed features for technical feasibility and suggesting alternative solutions when necessary.
+- **Entity Relationship Identification**: Working together to identify entities and their relationships, such as question sets and questions, to ensure the data model accurately reflected user needs.
+
+![High-Fidelity Design](https://framerusercontent.com/images/MWLOYDfjGJ8UeJmPcaHvu1JAZE.png)
+
+This early collaboration ensured that both the engineering and UX teams were aligned, resulting in a product that is both technically sound and user-friendly.
+
+### Conclusion
+
+Glovee streamlines the immigration consultancy process by providing a centralized platform for managing client data. Through a combination of thoughtful UX design and robust engineering practices, we developed a tool that addresses the specific needs of consultants and their clients, improving efficiency and success rates.
+
+Our journey involved iterative development, technology stack evolution, and performance optimizations. By leveraging technologies like Next.js, Golang, PostgreSQL, and PostgREST, we created a maintainable application with clear separation of concerns, making it easier to extend and adapt to future needs.
+
+---
+
+**Technologies Used**:
+
+- **Frontend**: Next.js
+- **Backend**: Golang, PostgreSQL, PostgREST
+- **Deployment**: DigitalOcean App Platform
+- **Storage**: Amazon S3
+- **Other Services**: Resend (Email)
+
+**Key Architectural Approaches**:
+
+- Modular Monolith with Domain-Driven Design
+- Server-Side Rendering for Performance Optimization
+- Multi-Tenancy through Subdomain Routing
+- Business Logic in Database with PL/pgSQL Functions
+- Fine-Grained Access Control via PostgreSQL Roles
+
+---
+
+By implementing these strategies and technologies, we ensured that Glovee is not only efficient and user-friendly but also ready to adapt as we continue to grow and serve more clients in the immigration consultancy sector.

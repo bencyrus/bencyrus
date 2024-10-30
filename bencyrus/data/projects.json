@@ -6,29 +6,5 @@
     "endDate": "Ongoing",
     "projectUrl": "/projects/glovee",
     "featured": true
-  },
-  {
-    "title": "JayPlus - Business management platform for car detailing businesses",
-    "imageSrc": "/assets/image/jayplus-project-thumbnail.png",
-    "startDate": "Oct 2022",
-    "endDate": "Feb 2023",
-    "projectUrl": "/projects/jayplus",
-    "featured": true
-  },
-  {
-    "title": "TaskFlow - Team Productivity Dashboard",
-    "imageSrc": "/assets/image/taskflow-project-thumbnail.png",
-    "startDate": "Mar 2022",
-    "endDate": "Aug 2022",
-    "projectUrl": "/projects/taskflow",
-    "featured": false
-  },
-  {
-    "title": "EcoTrack - Environmental Impact Calculator",
-    "imageSrc": "/assets/image/ecotrack-project-thumbnail.png",
-    "startDate": "Jan 2022",
-    "endDate": "Mar 2022",
-    "projectUrl": "/projects/ecotrack",
-    "featured": false
   }
 ]

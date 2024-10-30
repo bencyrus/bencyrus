@@ -91,9 +91,9 @@ function HomePageProjects() {
     );
 
   return (
-    <div>
+    <div id="selected-projects">
       <h3 className="text-[20px] font-medium">Selected Projects</h3>
-      <div className="flex gap-[24px] mt-[20px] flex-col md:flex-row">
+      <div className="grid mt-[20px] grid-cols-1 md:grid-cols-2 2xl:grid-cols-3 gap-[36px] md:gap-[24px]">
         {featuredProjects.map((project) => (
           <ProjectCard key={project.title} project={project} />
         ))}
@@ -108,7 +108,7 @@ function HomePageBlogPosts() {
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 
   return (
-    <div>
+    <div id="selected-posts">
       <h3 className="text-[20px] font-medium">Selected Blog Posts</h3>
       <div className="flex gap-[32px] mt-[20px] flex-col">
         {featuredBlogPosts.map((post, index) => (
